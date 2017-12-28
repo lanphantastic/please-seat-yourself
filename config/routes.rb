@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   root 'restaurants#index'
 
   resources :users, except: [:show]
+  get '/profile', to: "users#show", as: :profile
+  get '/admin', to: "users#admin", as: :admin
 
+  resources :sessions, only: %i( new create destroy )
+
+  
 end
