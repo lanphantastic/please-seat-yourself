@@ -1,4 +1,4 @@
-class AddDesscriptionToRestaurants < ActiveRecord::Migration[5.1]
+class AddDescriptionToRestaurant < ActiveRecord::Migration[5.1]
   def change
     add_column :restaurants, :description, :text
   end
