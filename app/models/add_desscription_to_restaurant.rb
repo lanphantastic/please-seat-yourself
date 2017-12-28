@@ -1,0 +1,2 @@
+class AddDesscriptionToRestaurant < ApplicationRecord
+end
