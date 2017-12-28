@@ -1,0 +1,2 @@
+class AddImagetoRestaurant < ApplicationRecord
+end
