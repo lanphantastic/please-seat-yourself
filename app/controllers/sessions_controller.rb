@@ -35,7 +35,12 @@ def create
       render :new
       flash.clear
     end
-    # email cannot be blank
+
+  # email cannot be blank
+  else
+    flash[:notice] = "Email field can't be blank"
+    render :new
+    flash.clear
   end
 end
 
