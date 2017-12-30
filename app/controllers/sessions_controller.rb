@@ -28,8 +28,12 @@ def create
         render :new
         flash.clear
       end
-      
+
     # only one unique email
+    else
+      flash[:notice] = "Try to type a email please"
+      render :new
+      flash.clear
     end
     # email cannot be blank
   end
