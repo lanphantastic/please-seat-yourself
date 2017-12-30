@@ -23,7 +23,12 @@ def create
         end
 
       # check password
+      else
+        flash[:notice] = "Password field can't be blank"
+        render :new
+        flash.clear
       end
+      
     # only one unique email
     end
     # email cannot be blank
