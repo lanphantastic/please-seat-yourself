@@ -27,14 +27,17 @@ class RestaurantsController < ApplicationController
     @restaurant.close_hour = @restaurant.close_hour.strftime('%I:%M%p')
   end
 
-  def edit
-
-  end
-
   def update
+    @restaurant = Restaurant.find(params[:id])
 
+    if @restaurant.update(restaurant_params)
+      redirect_to admin_path
+    else
+      flash[:alert] = "There are mistakes in your submission"
+      render :edit
+    end
   end
-
+  
   private
 
   def restaurant_params
