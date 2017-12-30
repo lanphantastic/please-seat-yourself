@@ -6,4 +6,8 @@ class Restaurant < ApplicationRecord
     '30 - 60' => '$30 to $60',
     '60 - 90' => '$60 to $90'
   }
+
+  has_many :reservations
+  has_many :users, through: :reservations
+  
 end
