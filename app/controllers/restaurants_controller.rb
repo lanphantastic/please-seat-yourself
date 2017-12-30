@@ -17,12 +17,14 @@ class RestaurantsController < ApplicationController
     end
   end
 
-  def create
-
+  def show
+    @restaurant = Restaurant.find(params[:id])
   end
 
-  def show
-
+  def edit
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.open_hour = @restaurant.open_hour.strftime('%I:%M%p')
+    @restaurant.close_hour = @restaurant.close_hour.strftime('%I:%M%p')
   end
 
   def edit
