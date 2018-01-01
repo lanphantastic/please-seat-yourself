@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
   end
 
   def new
-
+    @reservation = @restaurant.reservations.new
   end
 
   def create
