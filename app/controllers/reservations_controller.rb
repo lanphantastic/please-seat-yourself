@@ -1,5 +1,8 @@
 class ReservationsController < ApplicationController
 
+  before_action :require_login
+  before_action :load_restaurant
+
   def confirm
     @reservation = @restaurant.reservations.find(params[:id])
     @reservation.status = "confirmed"
