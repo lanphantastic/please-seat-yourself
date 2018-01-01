@@ -24,7 +24,16 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @reservation = @restaurant.reservations.new(reservation_params)
+    @reservation.user_id = current_user.id
 
+    if @reservation.save
+      flash[:notice] = "Thanks for choosing us. Please wait for a confirmation of your reservation"
+      redirect_to restaurant_url(@restaurant)
+    else
+      flash[:alert] = "Sorry. Your reservation couldn't be processed."
+      render :new
+    end
   end
 
 
