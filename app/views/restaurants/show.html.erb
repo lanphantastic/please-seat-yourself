@@ -2,4 +2,38 @@
 
 <div class="row">
   <%= render 'partials/errors', object: @restaurant %>
+
+  <%= form_for @restaurant, html: { class: 'col s10 offset-s1 m8 offset-m2 l6 offset-l3' } do |f| %>
+
+    <div class="input-field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="input-field file-field">
+      <div class="btn">
+        <span>Image</span>
+          <%= f.file_field :image, class: 'form-control' %>
+      </div>
+      <div class="file-path-wrapper">
+        <input type="text" class="file-path validate">
+      </div>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'materialize-textarea' %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+    </div>
+
+    <div class="input-field">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
+
+  <% end %>
 </div>
