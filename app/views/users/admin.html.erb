@@ -12,6 +12,19 @@
           <th>Actions</th>
         </tr>
       </thead>
+
+      <tbody>
+        <% current_user.restaurant.reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.user.name %></td>
+            <td><%= reservation.date.strftime('%A, %B %d, %Y') %></td>
+            <td><%= reservation.time.strftime('%I:%M%p') %></td>
+            <td>
+              <%=  reservation.status %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
   </div>
 </div>
