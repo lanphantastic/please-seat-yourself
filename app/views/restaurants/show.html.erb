@@ -1,0 +1,7 @@
+<!-- Capture meta-tags to display in layout head -->
+<% content_for :metas do %>
+  <meta property="og:title" content="<%= @restaurant.name %>" />
+  <meta property="og:type" content="restaurant.restaurant" />
+  <meta property="og:url" content="<%= request.original_url %>" />
+  <meta property="og:image" content="<%= @restaurant.image.card.url %>" />
+<% end %>
