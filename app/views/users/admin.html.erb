@@ -1,0 +1,51 @@
+<h2>Current reservations</h2>
+
+<div class="row">
+  <div class="col m8 offset-m2">
+    <table class="responsive-table highlight">
+
+      <!-- TABLE'S COLUMN NAME -->
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <!-- END TABLE'S COLUMN NAME -->
+
+      <!-- RESTAURANT AND RESERVATION INFORMATION -->
+      <tbody>
+
+        <!-- ADMIN'S RESERVATION FOR EACH RESTAURANT -->
+        <% current_user.restaurant.reservations.each do |reservation| %>
+
+          <tr>
+            <td><%= reservation.user.name %>                     </td>
+            <td><%= reservation.date.strftime('%A, %B %d, %Y') %></td>
+            <td><%= reservation.time.strftime('%I:%M%p') %>      </td>
+            <td><%= reservation.status %>                        </td>
+
+            <!-- RESERVATION'S STATUS -->
+            <td>
+              <% if reservation.status == "pending" %>
+                <%= link_to "Confirm", restaurant_reservation_confirm_path(reservation.restaurant, reservation), method: :patch, class: 'btn waves-effect waves-light btn' %>
+                <%= link_to "Cancel", restaurant_reservation_cancel_path(reservation.restaurant, reservation), method: :put, class: 'btn waves-effect waves-light btn' %>
+              <% end %>
+            </td>
+            <!-- END RESERVATION'S STATUS -->
+
+          </tr>
+        <% end %>
+        <!-- END ADMIN'S RESERVATION FOR EACH RESTAURANT -->
+
+      </tbody>
+      <!-- END RESTAURANT AND RESERVATION INFORMATION -->
+
+    </table>
+    <!-- END TABLE -->
+
+  </div>
+</div>
