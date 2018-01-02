@@ -5,3 +5,8 @@
   <meta property="og:url" content="<%= request.original_url %>" />
   <meta property="og:image" content="<%= @restaurant.image.card.url %>" />
 <% end %>
+
+<!-- Capture title to display in layout head -->
+<% content_for :title do %>
+  <%= @restaurant.name %>
+<% end %>
