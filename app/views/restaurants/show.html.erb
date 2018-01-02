@@ -13,6 +13,40 @@
 
 <h2 class="restaurant_name"><%= @restaurant.name %></h2>
 
+<!-- MAKE RESERVATION FOR SELECTED RESTAURANT -->
 <div class="center">
   <%= link_to 'Make a Reservation', new_restaurant_reservation_path(@restaurant), class: 'btn reservation-btn' %>
 </div>
+
+<div class="row">
+  <div class="col m6 offset-m3">
+
+    <!-- INDIVIDUAL RESTAURANT CARD -->
+    <div class="card hoverable restaurant_card">
+
+      <!-- CARD-CONTENT -->
+      <div class="card-content">
+        <div class="main restaurant center">
+
+          <p class="description"><%= @restaurant.description %></p>
+
+          <hr>
+
+          <p>Price Range: $<%= @restaurant.price_range %></p>
+          <p>Hours: <%= @restaurant.open_hour.strftime('%I:%M%p') %> to <%= @restaurant.close_hour.strftime('%I:%M%p') %></p>
+
+          <hr>
+
+          <img class="image_show" src="<%= @restaurant.image.card.url %>" alt="<%= @restaurant.name%>">
+
+        </div>
+      </div>
+      <!-- END CARD-CONTENT -->
+
+    </div>
+    <!-- END INDIVIDUAL RESTAURANT CARD -->
+
+  </div>
+
+</div>
+<!-- END ROW -->
