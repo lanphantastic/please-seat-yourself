@@ -5,4 +5,43 @@
       <h1>Seat Yourself</h1>
     </div>
   </div>
+
+  <div class="restaurant_info">
+
+    <!-- DIV #2: LIST OF RESTAURANTS -->
+    <h2 class="res_home">Restaurants</h2>
+    <div class="row">
+
+      <!-- RESTAURANT LOOP -->
+      <% @restaurants.each do |rest| %>
+        <div class="col m6">
+
+          <!-- INDIVIDUAL CARD PER RESTAURANT -->
+          <div class="card hoverable restaurant_card">
+            <div class="card-content">
+              <a href="/restaurants/<%= rest.id %>">
+                <div class="restBox">
+                  <h4 class="restaurant_name"><%=rest.name%></h4>
+                  <hr>
+                  <img class="image_card" src="<%= rest.image.card.url %>" alt="<%= rest.name %>">
+                  <hr>
+                  <p>Address: <%=rest.address%></p>
+                  <p>City: <%=rest.city%></p>
+                  <p>Price Range: $<%=rest.price_range%></p>
+                  <p>Business hours: <%=rest.open_hour.strftime('%I:%M%p')%> to <%=rest.close_hour.strftime('%I:%M%p') %></p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- END INDIVIDUAL CARD PER RESTAURANT -->
+
+        </div>
+      <% end %>
+      <!-- END RESTAURANT LOOP -->
+
+    </div>
+
+  </div>
+  <!-- END RESTAURANT INFO -->
+
 </div>
