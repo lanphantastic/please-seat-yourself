@@ -11,6 +11,24 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato:300" rel="stylesheet">
 
   <body>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+      <!-- DISPLAY LOGIN USER -->
+      <% if current_user %>
+        <%= link_to "Hello, #{current_user.name}!", profile_path, class: 'user_name' %>
+      <% end %>
+      <!-- END DISPLAY LOGIN USER -->
+
+      <!-- NAV ITEM -->
+      <ul id="nav-mobile" class="right">
+        <li>
+          <%= link_to 'Home', root_path %>
+        </li>
+      </ul>
+  </nav>
+
     <%= yield %>
   </body>
 </html>
