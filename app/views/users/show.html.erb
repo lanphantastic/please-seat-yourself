@@ -6,4 +6,34 @@
       <%= link_to 'Create Restaurant', new_restaurant_path, class: 'btn center' %>
     </div>
   <% end %>
+
+  <h3>My Reservations</h3>
+
+  <div class="row">
+    <div class="col s10 offset-s1 m6 offset-m3 l4 offset-l4">
+
+      <!-- LIST ALL RESERVATION MADE BY THE CURRENT USER -->
+      <% current_user.reservations.order(created_at: :desc).each do |reservation| %>
+        <div class="card">
+          <div class="card-content">
+
+            <span class="card-title">
+
+              <!-- RESTAURANT'S NAME -->
+              <p class="reser restaurant_name">Restaurant: <%= reservation.restaurant.name %></p>
+              <hr>
+
+              <!-- RESTAURANT'S INFO -->
+              <p>Date: <%= reservation.date.strftime('%A, %B %d, %Y') %></p>
+              <p>Time: <%= reservation.time.strftime('%I:%M%p') %>      </p>
+              <p>Number of people: <%= reservation.num_seats %>         </p>
+              <p class="status">Your Reservation is: <%= reservation.status.upcase %></p>
+
+            </span>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
 </div>
