@@ -26,6 +26,21 @@
         <li>
           <%= link_to 'Home', root_path %>
         </li>
+
+        <!-- PROFILE -->
+        <% if current_user %>
+          <li>
+            <%= link_to 'Profile', profile_path %>
+          </li>
+        <!-- END PROFILE -->
+
+          <!-- ADMIN -->
+          <% if current_user.is_admin? %>
+            <li>
+              <%= link_to 'Admin', admin_path %>
+            </li>
+          <% end %>
+          <!-- END ADMIN -->
       </ul>
   </nav>
 
