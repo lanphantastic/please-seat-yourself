@@ -1,1 +1,9 @@
-<h1>users#show</h1>
+<div class="profile-container">
+  <h2 class="username"><%= current_user.name %></h2>
+
+  <% if !current_user.is_admin? %>
+    <div class="create_res_container">
+      <%= link_to 'Create Restaurant', new_restaurant_path, class: 'btn center' %>
+    </div>
+  <% end %>
+</div>
