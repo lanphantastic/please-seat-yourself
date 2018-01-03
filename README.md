@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+This project is an OpenTable clone; it is a large software project helped me reinforce the concepts I have learned about Ruby on Rails, API development, Materialize framework and AWS.
