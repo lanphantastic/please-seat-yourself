@@ -11,4 +11,8 @@ class Restaurant < ApplicationRecord
   has_many :users, through: :reservations
 
   validates :name, :address, :description, :city, :price_range, :total_seats, :open_hour, :close_hour, presence: true
+
+  def self.search(search)
+  where("name ILIKE ?", "%#{search}")
+  end
 end
