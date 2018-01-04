@@ -1,0 +1,112 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: lighter;
+  font-size: 1.8rem;
+  color: #04384A;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lato', sans-serif;
+  color: #04384A;
+}
+
+p, td {
+  font-size: 18px;
+  color: #04384A;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+hr {
+  border: solid 1px #04384A;
+}
+
+nav {
+  background-color: $color4;
+}
+
+.user_name {
+  display: inline;
+
+  @media(max-width: 650px) {
+    display: none;
+  }
+}
+
+.btn, .btn-flat {
+  background-color: transparent;
+  border: 1px solid $color2;
+  color: $color2;
+
+  &:hover {
+    background-color: $color2;
+    color: $color3;
+  }
+}
+
+.btn-flat {
+  margin-right: 5px;
+}
+
+ul li a {
+  font-size: 1.2rem;
+}
+
+.flash {
+  color: $color3;
+  width: 100%;
+  text-align: center;
+  background-color: #FC6453;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+form {
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.picker__date-display,
+.clockpicker-canvas line,
+.clockpicker-canvas-bg,
+.clockpicker-canvas-bearing {
+  background-color: $color4;
+  stroke: $color4;
+  fill: $color4;
+}
+
+.error {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  color: red;
+  font-size: 18px;
+}
+
+.tweet-btn {
+  display: flex;
+  justify-content: flex-end;
+
+  img {
+    width: 60px;
+    border-radius: 50%;
+  }
+}

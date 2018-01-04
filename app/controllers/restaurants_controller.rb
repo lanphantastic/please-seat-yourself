@@ -17,6 +17,18 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.user_id = current_user.id
+    if @restaurant.save
+      flash[:notice] = "#{@restaurant.name} has been created"
+      redirect_to admin_path
+    else
+      flash[:alert] = "There are mistakes in your submission"
+      render :new
+    end
+  end
+
   def show
     @restaurant = Restaurant.find(params[:id])
   end
@@ -37,7 +49,7 @@ class RestaurantsController < ApplicationController
       render :edit
     end
   end
-  
+
   private
 
   def restaurant_params

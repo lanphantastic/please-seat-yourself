@@ -1,5 +1,5 @@
 class Restaurant < ApplicationRecord
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
 
   PRICE_RANGES = {
     '15 - 30' => '$15 to $30',

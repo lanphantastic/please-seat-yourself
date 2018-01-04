@@ -1,0 +1,13 @@
+ @import "materialize/components/color";
+ @import "materialize";
+ @import "colors";
+ @import "common";
+ @import "users";
+ @import "restaurants";
+ @import "reservations";
+
+ body nav > a {
+   font-size: 1.2rem;
+   margin-left: 15px;
+   font-weight: bold;
+ }
