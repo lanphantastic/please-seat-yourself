@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title><%= content_for(:title) || "Seat Yourself" %></title>
     <%= csrf_meta_tags %>
     <%= content_for(:metas) if content_for?(:metas) %>
@@ -9,6 +9,7 @@
 
     <link rel="shortcut icon" href="aguacate.ico">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lato:300" rel="stylesheet">
+  </head>
 
   <body>
 
@@ -54,5 +55,6 @@
     <% end %>
 
     <%= yield %>
+    <!-- pomegranate image: from @valeria_aksakova - freepik -->
   </body>
 </html>
