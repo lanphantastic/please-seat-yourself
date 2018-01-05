@@ -5,41 +5,40 @@
   width: 100vw;
   height: calc(100vh - 64px);
   display: flex;
+}
+.home_image {
+  width: 50%;
+  background-image: image-url('pome.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
-  .home_image {
-    width: 50%;
-    background-image: image-url('pome.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+.text_container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-    .text_container {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+.text_container h1 {
+  font-family: 'Kaushan Script', cursive;
+  padding-top: 50px;
+  color: #FFF;
+  text-shadow: 2px 2px #333;
+}
 
-      h1 {
-        font-family: 'Kaushan Script', cursive;
-        padding-top: 50px;
-        color: #FFF;
-        text-shadow: 2px 2px #333;
-      }
-    }
-  }
-
-  .restaurant_info {
+.restaurant_info {
     width: 50%;
     height: 100%;
     overflow-y: scroll;
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
+}
 
-    a {
+.restaurant_info a {
       color: #04384A;
     }
-  }
-}
 
 .restaurant_name {
   font-family: 'Kaushan Script', cursive;
